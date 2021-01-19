@@ -293,13 +293,14 @@ def main():
             if is_validated_number(user_input_number):
                 Strikes, Balls = get_strikes_or_ball(user_input_number, random_number)
                 if Strikes == 3:
+                    print(f'Strikes : {Strikes} , Balls : {Balls}' )
                     while True:
                         one_more = input('You win, one more(Y/N) ?')
-                        if not is_no(one_more) and not is_yes(one_more):
-                            print('Wrong Input, Input again')
-
-                        else:
+                        if is_no(one_more) or is_yes(one_more):
                             break
+
+                        elif not is_no(one_more) and not is_yes(one_more):
+                            print('Wrong Input, Input again')
 
                     if is_no(one_more) or is_yes(one_more):
                         break
